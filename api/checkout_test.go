@@ -9,9 +9,11 @@ func TestCheckoutV1AppliesTheDiscountToTheOrder(t *testing.T) {
 	}
 }
 
-func TestCheckoutV2MatchesV1(t *testing.T) {
-	order, err := checkoutV2(CheckoutRequest{Lines: []CartLine{{ProductID: "toy-rope", Quantity: 2}}, DiscountCode: "PAWS15"}, "o")
-	if err != nil || order.SubtotalCents != 1798 || order.DiscountCents != 269 {
+func TestCheckoutV2SpreadsTheDiscountOverPhysicalItems(t *testing.T) {
+	order, err := checkoutV2(CheckoutRequest{Lines: []CartLine{
+		{ProductID: "toy-rope", Quantity: 2}, {ProductID: "gift-25", Quantity: 1},
+	}, DiscountCode: "PAWS15"}, "o")
+	if err != nil || order.SubtotalCents != 4298 || order.DiscountCents != 644 {
 		t.Fatalf("v2 = %+v, %v", order, err)
 	}
 }
