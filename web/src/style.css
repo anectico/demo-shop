@@ -1,0 +1,7 @@
+body { font-family: system-ui, sans-serif; margin: 0; color: #1d1d1b; background: #fbfaf7; }
+header { display: flex; gap: 1rem; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; border-bottom: 1px solid #e6e2d8; }
+main { display: grid; grid-template-columns: 1fr 18rem; gap: 1.5rem; padding: 1.5rem; }
+#catalog { display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); gap: 1rem; }
+article, aside { background: #fff; border: 1px solid #e6e2d8; border-radius: 8px; padding: 1rem; }
+button { cursor: pointer; }
+@media (max-width: 40rem) { main { grid-template-columns: 1fr; } }

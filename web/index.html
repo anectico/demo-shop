@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pawprint — pet supplies</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header>
+      <strong>Pawprint</strong>
+      <form id="signin">
+        <input id="email" name="email" type="email" placeholder="you@example.com" aria-label="Email" required />
+        <button type="submit">Sign in</button>
+      </form>
+      <span id="who" hidden></span>
+    </header>
+    <main>
+      <section id="catalog" aria-label="Products"></section>
+      <aside id="cart" aria-label="Cart">
+        <h2>Cart</h2>
+        <ul id="lines"></ul>
+        <label>Discount code <input id="code" name="code" autocomplete="off" /></label>
+        <button id="checkout" type="button" disabled>Checkout</button>
+        <p id="result" role="status"></p>
+      </aside>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
